@@ -17,6 +17,8 @@ def get_winner(path):
                 for vote in votes:
                     if vote == "Abstain":
                         break
+                    if vote == "":
+                        break
                     if vote in election:
                         election[vote] = election[vote] + vote_weight
                     else:
@@ -30,4 +32,5 @@ if __name__ == "__main__":
     path = sys.argv[1]
     election = get_winner(path)
     print(max(election.items(), key=operator.itemgetter(1)))
+    #print(election)
     print("\nDone!")
