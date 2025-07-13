@@ -23,7 +23,7 @@ def get_winner(path):
                         election[vote] = election[vote] + vote_weight
                     else:
                         election[vote] = vote_weight
-        vote_weight = vote_weight/2
+                    vote_weight = vote_weight/2
         return election
                 
 
@@ -32,5 +32,5 @@ if __name__ == "__main__":
     path = sys.argv[1]
     election = get_winner(path)
     print(max(election.items(), key=operator.itemgetter(1)))
-    #print(election)
+    print(election)
     print("\nDone!")
